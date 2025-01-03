@@ -1,0 +1,174 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e3f2ff;
+}
+
+.wrapper {
+    width: 65vmin;
+    height: 70vmin;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #293447;
+}
+
+.game-details {
+    color: #b8c6dc;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-board {
+    width: 100%;
+    height: 100%;
+    background-color: #212837;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+/* Yemek kutusunun fiziksel özellikleri */
+.play-board .food {
+    background: red;
+    border: 2px solid #ffffff;
+}
+
+.play-board .healty {
+    background: rgb(29, 252, 0);
+    border: 2px solid #ffffff;
+}
+
+.play-board .head {
+    background-color: #60cbff;
+}
+
+.controls {
+    display: flex; /* Her zaman göster */
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.controls i {
+    padding: 25px 0;
+    color: #b8c6dc;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    width: calc(100% / 4);
+    border-right: 1px solid #171b26;
+}
+
+.controls i:last-child {
+    border-right: none;
+}
+
+/* Küçük ekranlar için medya sorgusu */
+@media screen and (max-width: 800px) {
+    .wrapper {
+        width: 90vmin;
+        height: 115vmin;
+    }
+
+    .game-details {
+        font-size: 1rem;
+        padding: 15px 27px;
+    }
+
+    .controls i {
+        padding: 15px 0;
+        font-size: 1rem;
+    }
+}
+
+/* Büyük ekranlar için medya sorgusu */
+@media screen and (min-width: 800px) {
+    .wrapper {
+        width: 80vmin; /* Daha büyük tablo */
+        height: 90vmin;
+    }
+
+    .game-details {
+        font-size: 1.5rem;
+    }
+
+    .controls i {
+        font-size: 1.5rem; /* Daha büyük tuşlar */
+    }
+}
+
+
+.baslik{
+    text-align: center;
+    font-size: 50px;
+}
+
+@keyframes game-over-flash {
+    0%, 100% {
+        background-color: #e74c3c; /* Kırmızı */
+    }
+    50% {
+        background-color: #ffffff; /* Beyaz */
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.game-over-animation {
+    animation: game-over-flash 0.5s infinite, shake 0.5s;
+}
+
+.fade-out {
+    animation: fade-out 1s forwards;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+/* Şimşek animasyonu */
+@keyframes lightning {
+    0% {
+        opacity: 0;
+        transform: scale(3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(3);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+
+
+
+
+
+
+
+
